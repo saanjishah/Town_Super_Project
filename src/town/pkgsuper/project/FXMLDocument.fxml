@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="549.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="town.pkgsuper.project.FXMLDocumentController">
+    <children>
+      <ImageView fx:id="background" fitHeight="605.0" fitWidth="952.0" pickOnBounds="true" preserveRatio="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" layoutY="549.0" stroke="BLACK" strokeType="INSIDE" width="952.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0099cc" height="32.0" layoutX="484.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-background-color: #0099cc;" width="70.0" />
+      <Label fx:id="infoLab" alignment="CENTER" layoutX="110.0" layoutY="144.0" prefHeight="235.0" prefWidth="359.0" style="-fx-background-color: #0099cc;" text="This is where all information will be delivered to the user." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Button fx:id="button" layoutX="85.0" layoutY="86.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="409.0" text="Start" />
+      <Button layoutX="50.0" layoutY="415.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="234.0" text="Restart " textAlignment="CENTER">
+         <effect>
+            <Blend />
+         </effect></Button>
+      <Text fill="WHITE" layoutX="496.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #0099cc;" text="Day:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="day" alignment="CENTER" layoutX="484.0" layoutY="233.0" prefHeight="56.0" prefWidth="70.0" style="-fx-background-color: #0099cc;" text="Day #" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="174.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Town Health:" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ProgressBar fx:id="desLevel" layoutX="18.0" layoutY="567.0" prefHeight="24.0" prefWidth="134.0" progress="0.0" style="-fx-accent: #ECE809;" />
+      <Text fill="WHITE" layoutX="21.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destruction Level:" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="tMoney" alignment="CENTER" contentDisplay="CENTER" layoutX="293.0" layoutY="570.0" prefHeight="18.0" prefWidth="90.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Text fill="WHITE" layoutX="291.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Money:" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="407.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Population:" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="509.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# of people that died" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="688.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# of people born" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="834.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Did Super Die?" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="totpop" alignment="CENTER" layoutX="401.0" layoutY="569.0" prefHeight="17.0" prefWidth="118.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="die" alignment="CENTER" layoutX="532.0" layoutY="569.0" prefHeight="17.0" prefWidth="118.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="born" alignment="CENTER" layoutX="674.0" layoutY="569.0" prefHeight="17.0" prefWidth="118.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="superDie" alignment="CENTER" layoutX="805.0" layoutY="569.0" prefHeight="17.0" prefWidth="118.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Text fill="#fffdfd" layoutX="430.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORT:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <ListView fx:id="buildLV" layoutX="583.0" layoutY="47.0" onMouseClicked="#handleClick" prefHeight="462.0" prefWidth="178.0" style="-fx-border-width: 0;" />
+      <ListView fx:id="destroyedBuild" layoutX="757.0" layoutY="47.0" onMouseClicked="#handleClick" prefHeight="462.0" prefWidth="178.0" style="-fx-border-width: 0;" />
+      <ProgressBar fx:id="theal" layoutX="159.0" layoutY="567.0" prefHeight="24.0" prefWidth="134.0" progress="0.0" style="-fx-accent: #ECE809;" />
+      <Text fill="WHITE" layoutX="680.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUILDINGS:">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#fff600" layoutX="90.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOWN SUPER:">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Text>
+      <Button fx:id="keepGoing" layoutX="302.0" layoutY="415.0" mnemonicParsing="false" onAction="#keepPlaying" prefHeight="26.0" prefWidth="234.0" text="Continue Playing" textAlignment="CENTER">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>
